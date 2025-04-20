@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern File Manager</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+  <button id="theme-toggle">🌓</button>
+
+  <div class="app-container">
+    <h1>Access Your Files Anywhere</h1>
+
+    <div class="toolbar">
+      <button class="action-btn" id="createFolderBtn">📂 Create Folder</button>
+      <button class="action-btn" id="createFileBtn">📄 Create File</button>
+      <button class="action-btn" id="deleteBtn">❌ Delete</button>
+      <button class="action-btn" id="viewFileBtn">👁️ View File</button>
+    </div>
+  </div>
+
+  <div id="createFolderModal" class="modal">
+    <div class="modal-content">
+      <h2>Create Folder</h2>
+      <input type="text" id="folderNameInput" placeholder="Folder name" />
+      <div class="modal-actions">
+        <button id="createFolderSubmitBtn">Create</button>
+        <button id="cancelCreateBtn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="createFileModal" class="modal">
+    <div class="modal-content">
+      <h2>Create File</h2>
+      <input type="text" id="fileNameInput" placeholder="e.g. notes.txt" />
+      <div class="modal-actions">
+        <button id="createFileSubmitBtn">Create</button>
+        <button id="cancelFileBtn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="deleteModal" class="modal">
+    <div class="modal-content">
+      <h2>Delete File/Folder</h2>
+      <input type="text" id="deleteNameInput" placeholder="e.g. folder or file.txt" />
+      <div class="modal-actions">
+        <button id="deleteSubmitBtn">Delete</button>
+        <button id="cancelDeleteBtn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <input type="file" id="fileInput" style="display: none;" />
+
+  <div id="fileContent">
+    <h3>File Content:</h3>
+    <pre id="contentDisplay"></pre>
+  </div>
+</body>
+</html>
